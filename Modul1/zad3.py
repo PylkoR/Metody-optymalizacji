@@ -1,10 +1,10 @@
 import cvxpy as cp
 
 # Definicja zmiennych
-x_LekI = cp.Variable(nonneg=True)
-x_LekII = cp.Variable(nonneg=True)
-x_SurI = cp.Variable(nonneg=True)
-x_SurII = cp.Variable(nonneg=True)
+x_LekI = cp.Variable()
+x_LekII = cp.Variable()
+x_SurI = cp.Variable()
+x_SurII = cp.Variable()
 
 # Koszty i przychody
 f_costs = 100.00 * x_SurI + 199.90 * x_SurII + 700.00 * x_LekI + 800.00 * x_LekII
@@ -34,7 +34,6 @@ constraints = [
 prob = cp.Problem(objective, constraints)
 prob.solve()
 
-print(f"Status: {prob.status}")
 print(f"Lek I: {x_LekI.value:.3f} tys. opakowań")
 print(f"Lek II: {x_LekII.value:.3f} tys. opakowań")
 print(f"Surowiec I: {x_SurI.value:.3f} kg")

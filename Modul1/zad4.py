@@ -2,9 +2,14 @@ import pandas as pd
 import numpy as np
 import cvxpy as cp
 import matplotlib.pyplot as plt
+import os
+
+# Dynamiczna ścieżka do pliku
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, 'data01.csv')
 
 # Wczytanie danych
-data = pd.read_csv('Modul1\\data01.csv', header=None)
+data = pd.read_csv(file_path, header=None)
 x_val = data.iloc[:, 0].values
 y_val = data.iloc[:, 1].values
 
