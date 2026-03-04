@@ -10,7 +10,7 @@ x_SurII = cp.Variable(nonneg=True)
 f_costs = 100.00 * x_SurI + 199.90 * x_SurII + 700.00 * x_LekI + 800.00 * x_LekII
 f_income = 6500.00 * x_LekI + 7100.00 * x_LekII
 
-# Funkcja celu: minimize(f_costs - f_income)
+# Funkcja celu
 objective = cp.Minimize(f_costs - f_income)
 
 constraints = [
