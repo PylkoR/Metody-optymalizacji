@@ -13,13 +13,13 @@ data = pd.read_csv(file_path, header=None)
 x_val = data.iloc[:, 0].values
 y_val = data.iloc[:, 1].values
 
-# Metoda LP (Norma L1)
+# Metoda LP
 a_lp = cp.Variable()
 b_lp = cp.Variable()
 obj_lp = cp.Minimize(cp.norm1(a_lp * x_val + b_lp - y_val))
 cp.Problem(obj_lp).solve()
 
-# Metoda LS (Norma L2)
+# Metoda LS
 a_ls = cp.Variable()
 b_ls = cp.Variable()
 obj_ls = cp.Minimize(cp.sum_squares(a_ls * x_val + b_ls - y_val))

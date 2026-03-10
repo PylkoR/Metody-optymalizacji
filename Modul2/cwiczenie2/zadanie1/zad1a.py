@@ -32,7 +32,7 @@ constraints = [
 prob = cp.Problem(objective, constraints)
 prob.solve()
 
-print(f"Minimalne pole (1a): A = {prob.value:.4f}") # Odp: 0.1746
+print(f"Minimalne pole (1a): A = {round(prob.value, 5):.4f}") # Odp: 0.1746
 
 # Wykres krzywej optymalnej i punktów stałych
 plt.figure(figsize=(10, 6))
@@ -48,6 +48,6 @@ plt.axvline(0, color='black', linewidth=1)
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.xlabel('x / a')
 plt.ylabel('y(x)')
-plt.title(f"Zadanie Izoperymetryczne - Wynik: A = {prob.value:.4f}")
+plt.title(f"Zadanie Izoperymetryczne - Wynik: A = {round(prob.value, 5):.4f}")
 plt.legend()
 plt.show()

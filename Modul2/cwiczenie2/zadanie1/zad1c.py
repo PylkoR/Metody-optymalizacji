@@ -24,7 +24,7 @@ objective = cp.Maximize(h * cp.sum(y))
 constraints = [
     y[0] == 0, y[N] == 0,
     y[fixed_idx] == y_fixed_all[fixed_idx],
-    # Brak ograniczenia na krzywiznę (warunek 16c usunięty)
+    # Brak ograniczenia na krzywiznę
     cp.sum([cp.norm(cp.vstack([h, y[i+1] - y[i]])) for i in range(N)]) <= L
 ]
 
